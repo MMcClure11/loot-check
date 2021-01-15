@@ -4,7 +4,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        I am the app.js
+        <h2>Loot Check</h2>      
       </div>
     )
   }
