@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { balance } from '../actions/balance'
+import { deposit } from '../actions/balance'
 
 export class Wallet extends Component {
 
@@ -24,6 +24,6 @@ export class Wallet extends Component {
   }
 }
 
-export default connect(state => { return { balance: state} }, null)(Wallet);
+export default connect(state => { return { balance: state} }, { deposit })(Wallet);
 //Note: We export the wallet class above so that our tests are testing the unconnected version of the Wallet
 //When we connect a component, it adds in quite a bit of nuance that is hard to test
