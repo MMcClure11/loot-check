@@ -10,3 +10,11 @@ const store = createMockStore({ bitcoin: {} });
 const mockResponse = { body: { bpi: 'bitcoin price index'}};
 
 fetchMock.get('https://api.coindesk.com/v1/bpi/currentprice.json', mockResponse);
+
+it('creates an async action to fetch the bitcoin value', () => {
+  const expectedActions = [{ bitcoin: mockResponse.body, type: FETCH_BITCOIN}];
+
+  return store.dispatch(fetchBitcoin()).then(() => {
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+});
