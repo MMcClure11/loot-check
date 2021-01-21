@@ -20,3 +20,6 @@ describe('App', () => {
     expect(app.find('Wallet').exists()).toBe(true);
   })
 });
+
+yarn add redux-thunk --save
+yarn add redux-mock-store fetch-mock --save-dev
