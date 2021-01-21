@@ -23,3 +23,4 @@ describe('App', () => {
 
 yarn add redux-thunk --save
 yarn add redux-mock-store fetch-mock --save-dev
+yarn add node-fetch #had to add this because got testing error 'cannot find module 'node-fetch' in js/server
