@@ -27,6 +27,6 @@ export class Wallet extends Component {
   }
 }
 
-export default connect(state => { return { balance: state} }, { deposit, withdraw })(Wallet);
+export default connect(state => { return { balance: state.balance } }, { deposit, withdraw })(Wallet);
 //Note: We export the wallet class above so that our tests are testing the unconnected version of the Wallet
 //When we connect a component, it adds in quite a bit of nuance that is hard to test
