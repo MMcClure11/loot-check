@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { mount, shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 
 import { Loot } from './Loot';
@@ -7,9 +7,22 @@ import { Loot } from './Loot';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 
 describe('Loot', () => {
-  const loot = shallow(<Loot />);
+  const mockFetchbitcoin = jest.fn();
+  const props = { balance: 10, bitcoin: {} };
+  let loot = shallow(<Loot {...props} />);
 
-  it('render properly', () => {
+  it('renders properly', () => {
     expect(loot).toMatchSnapshot();
+  });
+
+  describe('when mounted', () => {
+    beforeEach( () => {
+      props.fetchBitcoin = mockFetchbitcoin;
+      loot = mount(<Loot {...props} />);
+    });
+
+    it('dispatches the `fetchBitcoin()` method it receives from props', () => {
+      expect(mockFetchbitcoin).toHaveBeenCalled();
+    });
   });
 });

@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { fetchBitcoin } from '../actions/bitcoin';
 
 export class Loot extends Component {
+
+  componentDidMount() {
+    this.props.fetchBitcoin();
+  }
+
   render() {
     return (
       <div>
