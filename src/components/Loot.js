@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchBitcoin } from '../actions/bitcoin';
 
 export class Loot extends Component {
   render() {
@@ -10,4 +12,4 @@ export class Loot extends Component {
   }
 }
 
-export default Loot;
+export default connect(state => state, { fetchBitcoin })(Loot);
