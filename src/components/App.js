@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Wallet from './Wallet';
 import Loot from './Loot';
 
-export default class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         <h2>Loot Check</h2>
@@ -13,5 +12,6 @@ export default class App extends Component {
         <Loot />  
       </div>
     )
-  }
 }
+
+export default App;
