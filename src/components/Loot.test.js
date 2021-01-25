@@ -14,18 +14,18 @@ describe('Loot', () => {
     expect(loot).toMatchSnapshot();
   });
 
-  // describe('when mounted', () => {
-  //   const mockFetchbitcoin = jest.fn();
+  describe('when mounted', () => {
+    const mockFetchbitcoin = jest.fn();
 
-  //   beforeEach( () => {
-  //     props.fetchBitcoin = mockFetchbitcoin;
-  //     loot = mount(<Loot {...props} />);
-  //   });
+    beforeEach( () => {
+      props.fetchBitcoin = mockFetchbitcoin;
+      loot = mount(<Loot {...props} />);
+    });
 
-  //   it('dispatches the `fetchBitcoin()` method it receives from props', () => {
-  //     expect(mockFetchbitcoin).toHaveBeenCalled();
-  //   });
-  // });
+    it('dispatches the `fetchBitcoin()` method it receives from props', () => {
+      expect(mockFetchbitcoin).toHaveBeenCalled();
+    });
+  });
 
   describe('when there are valid bitcoin props', () => {
     beforeEach(() => {
