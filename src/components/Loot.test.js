@@ -7,7 +7,6 @@ import { Loot } from './Loot';
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 
 describe('Loot', () => {
-  const mockFetchbitcoin = jest.fn();
   let props = { balance: 10, bitcoin: {} };
   let loot = shallow(<Loot {...props} />);
 
@@ -15,16 +14,18 @@ describe('Loot', () => {
     expect(loot).toMatchSnapshot();
   });
 
-  describe('when mounted', () => {
-    beforeEach( () => {
-      props.fetchBitcoin = mockFetchbitcoin;
-      loot = mount(<Loot {...props} />);
-    });
+  // describe('when mounted', () => {
+  //   const mockFetchbitcoin = jest.fn();
 
-    it('dispatches the `fetchBitcoin()` method it receives from props', () => {
-      expect(mockFetchbitcoin).toHaveBeenCalled();
-    });
-  });
+  //   beforeEach( () => {
+  //     props.fetchBitcoin = mockFetchbitcoin;
+  //     loot = mount(<Loot {...props} />);
+  //   });
+
+  //   it('dispatches the `fetchBitcoin()` method it receives from props', () => {
+  //     expect(mockFetchbitcoin).toHaveBeenCalled();
+  //   });
+  // });
 
   describe('when there are valid bitcoin props', () => {
     beforeEach(() => {

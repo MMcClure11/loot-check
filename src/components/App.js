@@ -8,7 +8,8 @@ export default class App extends Component {
       <div>
         <h2>Loot Check</h2>
         <hr />
-        <Wallet />    
+        <Wallet />
+        <hr />  
         <Loot />  
       </div>
     )
